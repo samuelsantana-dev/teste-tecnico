@@ -47,14 +47,18 @@
                         <!-- remover -->
                         <div class="produto-select">
                             <span>Cor:</span>
-                            <select><option value="Preto">Preto</option></select>
+                            <select id="select" onchange="verificarEstoque()"></select>
+                        </div>
+                        <div class="produto-select">
+                            <span>Tamanho:</span>
+                            <select id="tamanho" onchange="verificarEstoque()"></select>
                         </div>
 
                     </div>
                 </div>
 
                 <div class="produto-compra">
-                    <button class="btn-comprar btn"><div class="text-btn">Comprar</div></button>
+                    <button class="btn-comprar btn"><div class="text-btn" onclick="enviarPedido()">Comprar</div></button>
                 </div>
 
             </div>
@@ -62,7 +66,7 @@
         </div>
     </div>
 
-    <script src="./src/index.js"></script>
+    <script src="./dist/index.js"></script>
     
 </body>
 </html>
