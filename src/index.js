@@ -4,7 +4,6 @@ var dados;
     fetch('https://empreender.nyc3.cdn.digitaloceanspaces.com/static/teste-prod-1.json')
     .then(response => {
       if (response.ok) {
-        // console.log('SUCESSO NA CHAMADA');
         return response.json();
       } else {
         throw new Error('API request failed');
@@ -12,7 +11,6 @@ var dados;
     })
     .then(data => {
       dados = data
-    //   console.log('DADOS DA API', data);
       console.log('dados', dados);
       inserirElementosSelect()
       inserirTamanhosSelect()
@@ -25,14 +23,10 @@ var dados;
   chamadaApi()
 
   function inserirElementosSelect(){
-    // console.log('inserirElementosSelect dados', dados);
 
     const valuesCores = dados.values
-    // console.log('valuesCores', valuesCores);
     const cores = valuesCores[1].map(item => item)
-    // console.log('cores', cores);
     cores.map(item => {
-    //   console.log('item', item);
       let select = document.getElementById('select');
       let option = document.createElement('option');
       option.value = item;
@@ -41,14 +35,10 @@ var dados;
     })
   }
   function inserirTamanhosSelect(){
-    // console.log('inserirTamanhosSelect dados', dados);
 
     const valuesTamanhos = dados.values
-    // console.log('tamanho', valuesTamanhos);
     const cores = valuesTamanhos[0].map(item => item)
-    // console.log('tamanho', cores);
     cores.map(item => {
-    //   console.log('item', item);
       let select = document.getElementById('tamanho');
       let option = document.createElement('option');
       option.value = item;
@@ -65,12 +55,8 @@ var dados;
       (item) => item.values[0] === selectTamanho.value && item.values[1] === select.value
     );
 
-    //     console.log('dadosValuesTamanho', dadosValuesTamanho);
-//     console.log('dadosValuesCore', dadosValuesCore);
-  //     console.log('dadosVariants', dadosVariants);
 
     if (dadosValuesTamanho.length === 0 || dadosValuesTamanho[0].inventory_quantity <= 0) {
-        //     console.log('dadosVariants', dadosVariants);
 
       alert('Produto sem estoque');
     } else {
