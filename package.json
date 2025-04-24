@@ -4,9 +4,7 @@
   "description": "A aplicação é um checkout de um produto; nele a pessoa pode escolher as variantes para aquele produto e fazer a compra, verificando se aquela combinação de variantes existe e se tem em estoque, se caso tiver, irá habilitar o botão e se não, desabilitar. A quantidade de variantes de um produto **não é limitada.**",
   "main": "src/index.js",
   "scripts": {
-    "build": "webpack",
-  "server": "webpack serve"
-
+    "server": "webpack serve"
   },
   "repository": {
     "type": "git",
